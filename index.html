@@ -27,44 +27,45 @@
           <link rel="stylesheet" href="css/bootstrap.min.css">          
 </head>
 <body>
-    <div class="flex items-center justify-center py-5 px-5 ">
-        <h1 class="text-6xl">Contactos</h1>
+    <div class="text-center py-6 bg-blue-500 text-white">
+        <h1 class="text-4xl lg:text-6xl font-bold">Contactos</h1>
     </div>
     <section class="flex justify-center space-x-2 ">
-        <div class="px-1 py-1">
+        <div class="grid lg:grid-cols-3 gap-6">
+          <div class="space-y-4">
             <div class="m-1">
-                <label for="" class="m-4">Nombre:</label>
-                <input type="text" id="nombre">
-            </div>
-            <div class="m-1">
-                <label for="" class="m-4">Telefono</label>
-                <input type="text" id="telefono">
-            </div>
-            <div class="m-1">
-                <label for="">Correo Electronico:</label>
-                <input type="email" id="correo">
-            </div>
-            <div  class="m-1">
-                <label for="" class="m-4">Etiqueta:</label>
-                <input type="text" id="etiqueta">
-            </div>
-            <div>
-                <button class="m-1 px-2 py-2 bg-green-500 rounded" onclick="agg()" id="btn1">Añadir</button>
-            </div>
-        </div>
-        <div>
+              <label for="" class="block text-lg font-medium">Nombre:</label>
+              <input type="text" id="nombre" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div class="m-1">
+              <label for="" class="block text-lg font-medium">Telefono</label>
+              <input type="text" id="telefono" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div class="m-1">
+              <label for="" class="block text-lg font-medium">Correo Electronico:</label>
+              <input type="email" id="correo" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div  class="m-1">
+              <label for="" class="block text-lg font-medium">Etiqueta:</label>
+              <input type="text" id="etiqueta" class="w-full border border-gray-300 rounded-lg p-2">
+          </div>
+          <div>
+              <button class="m-1 px-2 py-2 bg-green-500 rounded" onclick="agg()" id="btn1">Añadir</button>
+          </div>
+      </div>
+          </div>
+            
+        <div class="bg-white shadow-lg rounded-lg p-6">
           <input type="text" id="filtrar">
           <button class="m-1 px-2 py-2 bg-blue-500 rounded" onclick="buscar()" id="btn2">Buscar</button>
-        </div>
-        <div>
-            <table>
-                <thead>
+            <table  class="w-full border-collapse border border-gray-300 text-left">
+                <thead class="bg-gray-200">
                   <tr>
-                    <th class="border border-black-500 p-2">Nombre</th>
-                    <th class="border border-black-500 p-2">Telefono</th>
-                    <th class="border border-black-500 p-2">Correo Electronico</th>
-                    <th class="border border-black-500 p-2">Etiqueta</th>
-                    <th class="border border-black-500 p-2">Acciones</th>
+                    <th class="border border-gray-300 p-2">Nombre</th>
+                    <th class="border border-gray-300 p-2">Telefono</th>
+                    <th class="border border-gray-300 p-2">Correo Electronico</th>
+                    <th class="border border-gray-300 p-2">Etiqueta</th>
+                    <th class="border border-gray-300 p-2">Acciones</th>
                   </tr>
                 </thead>
                 <tbody id="mostrar">

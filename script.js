@@ -81,8 +81,8 @@ function eliminar(cop){
                 <td>${flt.correo}</td>
                 <td>${flt.etiqueta}</td>
                 <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                 <button onclick="eliminar(${cop})" type="button" class="btn btn-danger">Eliminar</button >
-                <button onclick="editar(${cop})" type="button" clas="btn btn-warning">Editar</button>
+                 <button onclick="eliminar(${cop})" type="button" class="btn btn-danger hover:bg-danger-600"">Eliminar</button >
+                <button onclick="editar(${cop})" type="button" clas="btn btn-warning hover:bg-green-600"">Editar</button>
                 </div>
                 </td>
            </tr> `;
