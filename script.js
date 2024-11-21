@@ -47,3 +47,44 @@ function eliminar(cop){
     list.splice(cop,1);
     mostrar();
     }
+
+    function buscar(){
+        return  document.getElementById("filtrar").value;
+    }
+    
+    document.getElementById("btn2").addEventListener("click" , function(){
+        console.log("Button clicked");
+        var todo =  document.getElementById("mostrar");
+        todo.innerHTML ="";
+        if(buscar()===""){
+            console.log("No filter applied");
+            list.forEach((pers, cop) =>{
+                todo.innerHTML +=  `<tr> 
+                <td>${pers.nombre}</td>
+                <td>${pers.telefono}</td>
+                <td>${pers.correo}</td>
+                <td>${pers.etiqueta}</td>
+                <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                 <button onclick="eliminar(${cop})" type="button" class="btn btn-danger">Eliminar</button >
+                <button onclick="editar(${cop})" type="button" clas="btn btn-warning">Editar</button>
+                </div>
+                </td>
+           </tr> `;
+            } )
+        }else{
+            var filtroo = list.filter((per) =>  per.nombre === buscar());
+            filtroo.forEach((flt,cop) =>{
+                console.log("Adding filtered persona to table:", flt);
+                todo.innerHTML +=  `<tr> 
+                <td>${flt.nombre}</td>
+                <td>${flt.telefono}</td>
+                <td>${flt.correo}</td>
+                <td>${flt.etiqueta}</td>
+                <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                 <button onclick="eliminar(${cop})" type="button" class="btn btn-danger">Eliminar</button >
+                <button onclick="editar(${cop})" type="button" clas="btn btn-warning">Editar</button>
+                </div>
+                </td>
+           </tr> `;
+         })}
+        })
