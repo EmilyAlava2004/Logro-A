@@ -26,6 +26,7 @@ function mostrar(){
               <td>${per.correo}</td>
               <td>${per.etiqueta}</td>
               <td><div class="btn-group" role="group" aria-label="Basic mixed styles example">
+               <button onclick="eliminar(${cop})" type="button" class="btn btn-danger">Eliminar</button >
               <button onclick="editar(${cop})" type="button" clas="btn btn-warning">Editar</button>
               </div>
               </td>
@@ -42,3 +43,7 @@ function editar(cop){
     });
     mostrar();
 }
+function eliminar(cop){
+    list.splice(cop,1);
+    mostrar();
+    }
